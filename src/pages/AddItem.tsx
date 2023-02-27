@@ -11,6 +11,8 @@ export default function AddItem({navigation}: IPdpPageProps): JSX.Element {
 
   // Add item to the list
   const addItem = () => {
+    if (!itemName) return;
+
     let latestItem = todos[todos.length - 1];
     let id = latestItem ? latestItem.id + 1 : 1;
     setTodos([{id, title: itemName}, ...todos]);
